@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p th:text="'Hello ' + ${name}"> Hello! Empty</p>
+<!-- 타임리프는 "'Hello' + ${name}"라는 값으로 치환이 된다
+ 실질적으로 Hello! Empty같은 값은 없어도 된다
+ 서버 없이 HTML을 볼떄 마크업하는 사람이 보기 위해 Hello! Empty라고 작성해주는 것-->
+</body>
+</html>
