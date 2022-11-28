@@ -1,10 +1,13 @@
 package hello.spring.Repository;
 
 import hello.spring.Domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class MemoryMember_Repository implements Member_Repository {
+
 
     private static Map<Long,Member> store = new HashMap<>();
 

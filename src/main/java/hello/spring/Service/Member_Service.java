@@ -3,6 +3,7 @@ package hello.spring.Service;
 import hello.spring.Domain.Member;
 import hello.spring.Repository.Member_Repository;
 import hello.spring.Repository.MemoryMember_Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +13,14 @@ import java.util.Optional;
 public class Member_Service {
 
     // Service 만들기위한
-    private final Member_Repository member_repository = new MemoryMember_Repository();
+    private final Member_Repository member_repository;
 
-//    TODO 주 메소드
+    @Autowired
+    public Member_Service(MemoryMember_Repository memoryMember_repository) {
+        this.member_repository = memoryMember_repository;
+    }
+
+    //    TODO 주 메소드
     public Long Join(Member member)
     {
 //      같은 이름이 있는 중복회원 X
